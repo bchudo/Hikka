@@ -23,7 +23,7 @@
 # You can redistribute it and/or modify it under the terms of the GNU AGPLv3
 # 🔑 https://www.gnu.org/licenses/agpl-3.0.html
 
-
+import sys
 import argparse
 import asyncio
 import collections
@@ -399,6 +399,8 @@ class Hikka:
                 os.listdir(BASE_DIR),
             )
         ]
+        if len(self.sessions) > 1:
+            sys.exit(0)
 
     def _get_api_token(self):
         """Get API Token from disk or environment"""
